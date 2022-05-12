@@ -6,6 +6,10 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        return view('haloo');
+        return view('postpage');
+    }
+
+    public function login(){
+        return view('frontend/login');
     }
 }

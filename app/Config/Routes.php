@@ -27,7 +27,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'SigninController::index');
 $routes->get('/signup', 'SignupController::index');
 $routes->get('/signin', 'SigninController::index');
-$routes->get('/profile', 'ProfileController::index',['filter' => 'authGuard']);
+$routes->get('/post', 'PostController::index',['filter' => 'authGuard']);
 
 /*
  * --------------------------------------------------------------------

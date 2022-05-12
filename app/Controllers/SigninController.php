@@ -31,7 +31,7 @@ class SigninController extends Controller
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/profile');
+                return redirect()->to('/post');
             
             }else{
                 $session->setFlashdata('msg', 'Password is incorrect.');

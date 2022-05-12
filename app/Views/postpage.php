@@ -1,6 +1,23 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-    <h4 class="mt-5">Main Components</h4>
-    <p>Contoh page post content</p>
+<div class="row">
+    <div class="col">
+        <h4 class="mt-5">Apa yang ingin anda post ?</h4>
+        <div class="card">
+            <div class="card-header bg-white">
+                Nama
+            </div>
+            <div class="card-body">
+                <textarea id="default-editor">
+                <p><em>Hello</em>, <span style="text-decoration: underline;"><strong>World!</strong></span></p>
+                </textarea>
+            </div>
+            <div class="card-footer ms-auto bg-white">
+                <button type="button" class="btn btn-danger">Batal</button>
+                <button type="button" class="btn btn-primary ml-2">Posting</button>
+            </div>
+        </div>
+    </div>
+</div>
 <?= $this->endSection(); ?>
