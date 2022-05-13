@@ -158,6 +158,11 @@ a {
     background-color: var(--white-color)
 }
 
+.card-header .img-postingan{
+    width: 40px;
+    float: left;
+}
+
 .imgpd img{
     width: 50px;
 }
