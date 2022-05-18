@@ -17,10 +17,10 @@
     <div class="container">
       <div class="card login-card">
         <div class="row no-gutters">
-          <div class="col-md-5">
+          <div class="col-md-7">
             <img src="<?= base_url(); ?>/assets/images/login-images_2.jpg" alt="login" class="login-card-img">
           </div>
-          <div class="col-md-7">
+          <div class="col-md-5">
             <div class="card-body">
               <div class="brand-wrapper">
                 <img src="<?= base_url(); ?>/assets/images/logo.svg" alt="logo" class="logo">
@@ -35,7 +35,7 @@
               <form action="<?php echo base_url(); ?>/SigninController/loginAuth" method="post">
                 <div class="form-group mb-3">
                   <label for="email" class="sr-only">Email</label>
-                  <input type="email" name="email" id="email" value="<?= set_value('email') ?>" class="form-control" placeholder="Email address">
+                  <input type="email" name="email" id="email" value="<?= set_value('email') ?>" class="form-control" placeholder="Email">
                 </div>
                 <div class="form-group mb-3">
                   <label for="password" class="sr-only">Password</label>

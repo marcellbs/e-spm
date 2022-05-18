@@ -9,7 +9,7 @@ class SignupController extends Controller
     {
         helper(['form']);
         $data = [];
-        echo view('frontend/register', $data);
+        echo view('auth/register', $data);
     }
   
     public function store()
@@ -30,11 +30,11 @@ class SignupController extends Controller
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             $userModel->save($data);
-            return view('frontend/login');
+            return view('auth/login');
 
         }else{
             $data['validation'] = $this->validator;
-            echo view('frontend/register', $data);
+            echo view('auth/register', $data);
         }
           
     }

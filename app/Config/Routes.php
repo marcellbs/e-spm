@@ -27,8 +27,17 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'SigninController::index');
 $routes->get('/signup', 'SignupController::index');
 $routes->get('/signin', 'SigninController::index');
-$routes->get('/post', 'PostController::index',['filter' => 'authGuard']);
+$routes->get('/home', 'HomeController::index',['filter' => 'authGuard']);
 
+
+// crud posts
+$routes->get('posts', 'PostController::index');
+$routes->get('posts/new', 'PostController::new');
+$routes->post('posts', 'PostController::create');
+$routes->get('posts/(:num)', 'PostController::show/$1');
+$routes->get('posts/edit/(:num)', 'PostController::edit/$1');
+$routes->put('posts/(:num)', 'PostController::update/$1');
+$routes->delete('posts/(:num)', 'PostController::delete/$1'); 
 /*
  * --------------------------------------------------------------------
  * Route Definitions

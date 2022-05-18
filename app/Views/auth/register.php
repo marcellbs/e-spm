@@ -39,7 +39,7 @@
                             <form action="<?php echo base_url(); ?>/SignupController/store" method="post">
                                 <div class="form-group mb-3">
                                     <label for="name" class="sr-only">Name</label>
-                                    <input type="text" name="name" id="name" value="<?= set_value('name') ?>" class="form-control" placeholder="Name">
+                                    <input type="text" name="name" id="name" value="<?= set_value('name') ?>" class="form-control" placeholder="Nama">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="email" class="sr-only">Email</label>
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="password" class="sr-only">Confirm Password</label>
-                                    <input type="password" name="confirmpassword" id="password" class="form-control" placeholder="Confirm Password">
+                                    <input type="password" name="confirmpassword" id="password" class="form-control" placeholder="Konfirmasi Password">
                                 </div>
                                 <div class="d-grid">
                                     <button type="submit" class="btn btn-block login-btn mb-4">Signup</button>
@@ -65,7 +65,7 @@
 
                     <!-- gambar -->
                     <div class="col-md-7">
-                        <img src="<?= base_url(); ?>/assets/images/login.jpg" alt="login" class="login-card-img">
+                        <img src="<?= base_url(); ?>/assets/images/login-images_2.jpg" alt="login" class="login-card-img">
                     </div>
                     <!-- gambar -->
 

@@ -8,7 +8,7 @@ class SigninController extends Controller
     public function index()
     {
         helper(['form']);
-        echo view('frontend/login');
+        echo view('auth/login');
     } 
   
     public function loginAuth()
@@ -31,14 +31,14 @@ class SigninController extends Controller
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/post');
+                return redirect()->to('/home');
             
             }else{
-                $session->setFlashdata('msg', 'Password is incorrect.');
+                $session->setFlashdata('msg', 'Password salah.');
                 return redirect()->to('/signin');
             }
         }else{
-            $session->setFlashdata('msg', 'Email does not exist.');
+            $session->setFlashdata('msg', 'Email tidak tersedia.');
             return redirect()->to('/signin');
         }
     }
