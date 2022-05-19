@@ -75,19 +75,21 @@ class PostController extends ResourceController
             'title' => 'required|min_length[5]',
             'description' => 'required|min_length[5]',
         ]);
+        $data = [
+            'title' => 'Tambah Postingan',
+            'validation' => $this->validator
+        ];
 
         if (!$inputs) {
-            return view('posts/create', [
-                'validation' => $this->validator
-            ]);
+            return view('posts/create',$data);
         }
-
+        
         $this->post->save([
             'title' => $this->request->getVar('title'),
             'description'  => $this->request->getVar('description')
         ]);
         session()->setFlashdata('success', 'Berhasil membuat postingan.');
-        return redirect()->to(site_url('/posts'));
+        return redirect()->to(site_url('/posts' ));
     }
 
     /**
