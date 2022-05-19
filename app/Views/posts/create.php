@@ -2,15 +2,10 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-<?php $validation = \Config\Services::validation(); ?>
-    <div class="row py-4">
-        <div class="col-xl-12 text-end">
-            <a href="<?= base_url('posts') ?>" class="btn btn-primary">Kembali</a>
-        </div>
-    </div>
+    <?php $validation = \Config\Services::validation(); ?>
 
     <div class="row">
-        <div class="col-xl-6 m-auto">
+        <div class="col-md-10 mx-auto">
             <form method="POST" action="<?= base_url('posts') ?>">
                 <?= csrf_field() ?>
 
@@ -21,26 +16,31 @@
                     <div class="card-body p-4">
                         <div class="form-group mb-3 has-validation">
                             <label class="form-label">Judul</label>
-                            <input type="text" class="form-control <?php if($validation->getError('title')): ?>is-invalid<?php endif ?>" name="title" placeholder="Post Title" value="<?php echo set_value('title'); ?> "/>
-                            <?php if ($validation->getError('title')): ?>
+                            <input type="text" class="form-control <?php if ($validation->getError('title')) : ?>is-invalid<?php endif ?>" name="title" placeholder="Post Title" value="<?php echo set_value('title'); ?> " />
+                            <?php if ($validation->getError('title')) : ?>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('title') ?>
-                                </div>                                
+                                </div>
                             <?php endif; ?>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Deskripsi</label>
-                            <textarea id="default-editor" class="form-control <?php if($validation->getError('description')): ?>is-invalid<?php endif ?>" name="description" placeholder="Description"><?php echo set_value('description'); ?></textarea>
-                                <?php if ($validation->getError('description')): ?>
+                            <textarea id="default-editor" class="form-control <?php if ($validation->getError('description')) : ?>is-invalid<?php endif ?>" name="description" placeholder="Description"><?php echo set_value('description'); ?></textarea>
+                            <?php if ($validation->getError('description')) : ?>
                                 <div class="invalid-feedback">
                                     <?= $validation->getError('description') ?>
-                                </div>                                
+                                </div>
                             <?php endif; ?>
                         </div>
                     </div>
 
-                    <div class="card-footer">
+                    <div class="card-footer ms-auto bg-light border-light">
+                        
+                        <a href="<?= base_url('posts') ?>" class="btn btn-danger ">Kembali</a>
+                        
+
                         <button type="submit" class="btn btn-success">Simpan</button>
+                        
                     </div>
                 </div>
             </form>
