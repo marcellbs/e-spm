@@ -4,7 +4,7 @@
 <div class="container">
     <?php $validation = \Config\Services::validation(); ?>
 
-    <div class="row">
+    <div class="row mt-4">
         <div class="col-md-10 mx-auto">
             <form method="POST" action="<?= base_url('posts') ?>">
                 <?= csrf_field() ?>

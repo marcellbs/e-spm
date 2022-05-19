@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 <div class="container">
 
-    <div class="row">
+    <div class="row mt-4">
         <div class="col-md-10 mx-auto">
             <div class="card shadow">
                 <div class="card-header">

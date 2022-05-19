@@ -3,7 +3,7 @@
 <div class="container">
     <?php $validation = \Config\Services::validation(); ?>
 
-    <div class="row">
+    <div class="row mt-4">
         <div class="col-md-10 m-auto">
             <form method="POST" action="<?= base_url('posts/' . $post['id']) ?>">
                 <?= csrf_field() ?>
