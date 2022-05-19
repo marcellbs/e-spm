@@ -19,7 +19,12 @@ class HomeController extends BaseController
     public function index()
     {   
         $posts = $this->post->orderBy('id', 'desc')->findAll();
-        return view('home/home', compact('posts'));
+        $data = [
+            'title' => 'Dashboard',
+            'posts' => $posts,
+        ];
+        
+        return view('home/home',$data);
     }
     
 }

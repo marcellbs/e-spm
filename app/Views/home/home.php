@@ -17,9 +17,9 @@ use App\Database\Migrations\Users;
 
                 
                 <div class="card-body border border-light">
-                    <h4> 
-                        <?= $post['title'] ?>
-                    </h4>
+                        <h4 class="mx-2"> 
+                            <?= $post['title'] ?>
+                        </h4>
                         <p class="mx-2 text-justify">
                             <?= $post['description'] ?>
                         </p>

@@ -23,5 +23,5 @@
 
         });
     </script>
-    <title>Hello, world!</title>
+    <title> <?= $title; ?> </title>
 </head>

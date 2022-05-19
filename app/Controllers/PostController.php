@@ -24,7 +24,11 @@ class PostController extends ResourceController
     public function index()
     {   
         $posts = $this->post->orderBy('id', 'desc')->findAll();
-        return view('posts/index', compact('posts'));
+        $data = [
+            'title' => 'Postingan',
+            'posts' => $posts,
+        ];
+        return view('posts/index', $data);
     }
 
     /**
@@ -35,8 +39,12 @@ class PostController extends ResourceController
     public function show($id = null)
     {
         $post = $this->post->find($id);
+        $data = [
+            'title' => 'Detail Postingan',
+            'post' => $post,
+        ];
         if($post) {
-            return view('posts/show', compact('post'));
+            return view('posts/show', $data);
         }
         else {
             return redirect()->to('/posts');
@@ -50,7 +58,10 @@ class PostController extends ResourceController
      */
     public function new()
     {
-        return view('posts/create');
+        $data = [
+            'title' => 'Tambah Postingan',
+        ];
+        return view('posts/create', $data);
     }
 
     /**
@@ -87,8 +98,14 @@ class PostController extends ResourceController
     public function edit($id = null)
     {
         $post = $this->post->find($id);
+
+        $data = [
+            'title' => 'Edit Postingan',
+            'post' => $post,
+        ];
+
         if($post) {
-            return view('posts/edit', compact('post'));
+            return view('posts/edit', $data);
         }
         else {
             session()->setFlashdata('failed', 'Postingan tidak ditemukan.');
