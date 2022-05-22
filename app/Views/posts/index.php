@@ -36,7 +36,7 @@
                         </thead>
                         <tbody>
                             <?php
-                            $no = 1;
+                            $no = 1 + (5 * ($currentPage - 1));
                             if (count($posts) > 0) :
                                 foreach ($posts as $post) : ?>
                                     <tr>
@@ -63,6 +63,7 @@
                             <?php endif ?>
                         </tbody>
                     </table>
+                    <?= $pager->links('post', 'post_pagination'); ?>
                 </div>
             </div>
         </div>

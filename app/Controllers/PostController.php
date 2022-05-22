@@ -23,10 +23,14 @@ class PostController extends ResourceController
      */
     public function index()
     {   
-        $posts = $this->post->orderBy('id', 'desc')->findAll();
+        $currentPage = $this->request->getVar('page_post') ? $this->request->getVar('page_post') : 1;
+        // $posts = $this->post->orderBy('id', 'desc')->findAll();
+        
         $data = [
             'title' => 'Postingan',
-            'posts' => $posts,
+            'posts' => $this->post->paginate(5, 'post'),
+            'pager' => $this->post->pager,
+            'currentPage' => $currentPage,
         ];
         return view('posts/index', $data);
     }
