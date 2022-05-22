@@ -11,8 +11,16 @@ use App\Database\Migrations\Users;
         <?php foreach ($posts as $post): ?>
             <div class="card my-4 mb-3 mt-4">
                 <div class="card-header bg-white">
-                    <img class=" rounded-circle mx-2 img-postingan" src="https://i.imgur.com/hczKIze.jpg" alt=""> 
-                    <h6 class="card-title ms-3 mt-2">Marcell Bintang Setiawan</h6>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class=" rounded-circle mx-2 img-postingan" src="https://i.imgur.com/hczKIze.jpg" alt=""> 
+                            <h6 class="card-title ms-3 mt-2">Marcell Bintang Setiawan</h6>
+                        </div>
+                    
+                        <div class="col-md-8 mt-2">
+                           <i><p class="text-end"><small class="text-muted"><?= $post['created_at'] ?></small></p></i>
+                        </div>
+                    </div>
                 </div>
 
                 
